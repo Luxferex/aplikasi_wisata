@@ -11,7 +11,9 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 249, 249, 249),
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 249, 249, 249),
         toolbarHeight: 100,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,29 +23,31 @@ class HomeView extends GetView<HomeController> {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: Colors.black38,
               ),
             ),
             SizedBox(
               height: 10,
             ),
             Text(
-              'Travelling today?',
+              'Travelling Today?',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
-                color: Colors.black38,
+                color: Colors.black,
               ),
             ),
           ],
         ),
         actions: [
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {},
+          CircleAvatar(
+            backgroundImage: AssetImage("assets/images/User_Image.jpg"),
+            radius: 30,
           ),
+          SizedBox(
+            width: 20,
+          )
         ],
-        backgroundColor: Colors.grey.shade300,
       ),
       body: Container(
         child: Padding(
@@ -51,17 +55,30 @@ class HomeView extends GetView<HomeController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Search Box
               TextField(
                 decoration: InputDecoration(
                   hintText: 'Search for places...',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25)),
+                  border: InputBorder.none,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.horizontal(
+                      left: Radius.circular(20),
+                      right: Radius.circular(20),
+                    ),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.horizontal(
+                      left: Radius.circular(20),
+                      right: Radius.circular(20),
+                    ),
+                    borderSide: BorderSide.none,
+                  ),
+                  filled: true,
+                  fillColor: Colors.grey.shade100,
                   prefixIcon: Icon(Icons.search),
                 ),
               ),
               SizedBox(height: 20),
-
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -105,7 +122,6 @@ class HomeView extends GetView<HomeController> {
               SizedBox(
                 height: 20,
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -113,14 +129,21 @@ class HomeView extends GetView<HomeController> {
                     "Popular Destination",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text("See all",
+                  GestureDetector(
+                    onTap: () {
+                      //routing ke Popular destination
+                    },
+                    child: Text(
+                      "See all",
                       style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.blue))
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-
               SizedBox(
                 height: 15,
               ),
@@ -163,11 +186,19 @@ class HomeView extends GetView<HomeController> {
                     "Nearby Me",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Text("See all",
+                  GestureDetector(
+                    onTap: () {
+                      //routing ke Nearby Me
+                    },
+                    child: Text(
+                      "See all",
                       style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.blue))
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -175,13 +206,11 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Colors.grey.shade300,
+        color: Colors.white,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           child: GNav(
-            backgroundColor: Colors.grey.shade300,
-            activeColor: const Color.fromARGB(255, 41, 108, 162),
-            tabBackgroundColor: Colors.white60,
+            activeColor: const Color.fromARGB(255, 78, 172, 248),
             gap: 8,
             onTabChange: (index) {
               print(index);
