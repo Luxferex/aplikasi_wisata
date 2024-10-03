@@ -1,4 +1,4 @@
-import 'package:aplikasi_wisata/app/models/button_model.dart';
+import 'package:aplikasi_wisata/app/models/buttonkategori_model.dart';
 import 'package:aplikasi_wisata/app/models/destination_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -49,159 +49,163 @@ class HomeView extends GetView<HomeController> {
           )
         ],
       ),
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search for places...',
-                  border: InputBorder.none,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(20),
-                      right: Radius.circular(20),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search for places...',
+                    border: InputBorder.none,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(20),
+                        right: Radius.circular(20),
+                      ),
+                      borderSide: BorderSide.none,
                     ),
-                    borderSide: BorderSide.none,
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(20),
-                      right: Radius.circular(20),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(20),
+                        right: Radius.circular(20),
+                      ),
+                      borderSide: BorderSide.none,
                     ),
-                    borderSide: BorderSide.none,
+                    filled: true,
+                    fillColor: Colors.grey.shade100,
+                    prefixIcon: Icon(Icons.search),
                   ),
-                  filled: true,
-                  fillColor: Colors.grey.shade100,
-                  prefixIcon: Icon(Icons.search),
                 ),
-              ),
-              SizedBox(height: 20),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      buttonKategori(
+                        icon: Icon(Icons.beach_access),
+                        label: Text('Beach'),
+                        onPressed: () {},
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      buttonKategori(
+                        icon: Icon(Icons.beach_access),
+                        label: Text('Beach'),
+                        onPressed: () {},
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      buttonKategori(
+                        icon: Icon(Icons.beach_access),
+                        label: Text('Beach'),
+                        onPressed: () {},
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      buttonKategori(
+                        icon: Icon(Icons.beach_access),
+                        label: Text('Beach'),
+                        onPressed: () {},
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    buttonKategori(
-                      icon: Icon(Icons.beach_access),
-                      label: Text('Beach'),
-                      onPressed: () {},
+                    Text(
+                      "Popular Destination",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    buttonKategori(
-                      icon: Icon(Icons.beach_access),
-                      label: Text('Beach'),
-                      onPressed: () {},
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    buttonKategori(
-                      icon: Icon(Icons.beach_access),
-                      label: Text('Beach'),
-                      onPressed: () {},
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    buttonKategori(
-                      icon: Icon(Icons.beach_access),
-                      label: Text('Beach'),
-                      onPressed: () {},
-                    ),
-                    SizedBox(
-                      width: 10,
+                    GestureDetector(
+                      onTap: () {
+                        //routing ke Popular destination
+                      },
+                      child: Text(
+                        "See all",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Popular Destination",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      //routing ke Popular destination
-                    },
-                    child: Text(
-                      "See all",
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.blue,
+                SizedBox(
+                  height: 15,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      DestinationCard(
+                        imageAsset: "assets/images/pantai.jpeg",
+                        placeName: 'Beautiful Beach',
+                        location: 'Location A',
                       ),
-                    ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      DestinationCard(
+                        imageAsset: "assets/images/pantai.jpeg",
+                        placeName: 'Mountain View',
+                        location: 'Location B',
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      DestinationCard(
+                        imageAsset: "assets/images/pantai.jpeg",
+                        placeName: 'City Park',
+                        location: 'Location C',
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    DestinationCard(
-                      imageAsset: "assets/images/pantai.jpeg",
-                      placeName: 'Beautiful Beach',
-                      location: 'Location A',
+                    Text(
+                      "Nearby Me",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    DestinationCard(
-                      imageAsset: "assets/images/pantai.jpeg",
-                      placeName: 'Mountain View',
-                      location: 'Location B',
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    DestinationCard(
-                      imageAsset: "assets/images/pantai.jpeg",
-                      placeName: 'City Park',
-                      location: 'Location C',
+                    GestureDetector(
+                      onTap: () {
+                        //routing ke Nearby Me
+                      },
+                      child: Text(
+                        "See all",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Nearby Me",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      //routing ke Nearby Me
-                    },
-                    child: Text(
-                      "See all",
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

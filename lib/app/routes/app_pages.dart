@@ -2,6 +2,10 @@ import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/login/bindings/login_binding.dart';
+import '../modules/login/views/login_view.dart';
+import '../modules/registrasi/bindings/registrasi_binding.dart';
+import '../modules/registrasi/views/registrasi_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -22,6 +26,16 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => const SplashScreen(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => LoginView(),
+      binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTRASI,
+      page: () => registrasiView(),
+      binding: RegistrasiBinding(),
     ),
   ];
 }
