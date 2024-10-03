@@ -11,7 +11,7 @@ class Button extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.text,
-    this.backgroundColor = Colors.grey,
+    this.backgroundColor = const Color.fromARGB(255, 227, 227, 227),
     this.textColor = Colors.white,
     this.icon,
   });
@@ -28,7 +28,7 @@ class Button extends StatelessWidget {
           borderRadius:
               BorderRadius.circular(10), // Border radius yang lebih besar
           border: Border.all(
-            color: Colors.grey.shade400, // Warna border
+            color: backgroundColor, // Warna border
             width: 1.5, // Ketebalan border
           ),
         ),

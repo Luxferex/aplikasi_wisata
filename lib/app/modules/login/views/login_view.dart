@@ -15,6 +15,7 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 249, 249, 249),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
@@ -44,7 +45,7 @@ class LoginView extends GetView<LoginController> {
                   child: Text(
                     "Let's Found Hidden Place!",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: const Color.fromARGB(255, 78, 172, 248),
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
@@ -110,7 +111,10 @@ class LoginView extends GetView<LoginController> {
                   text: "Masuk dengan email",
                   backgroundColor: Colors.white,
                   textColor: Colors.black54,
-                  icon: Icon(Icons.email),
+                  icon: Icon(
+                    Icons.email,
+                    color: const Color.fromARGB(255, 136, 201, 253),
+                  ),
                 ),
                 SizedBox(
                   height: 25,
@@ -122,7 +126,7 @@ class LoginView extends GetView<LoginController> {
                   text: "Masuk dengan google",
                   backgroundColor: Colors.white,
                   textColor: Colors.black54,
-                  icon: Icon(Icons.login),
+                  icon: Icon(Icons.account_circle),
                 ),
 
                 const SizedBox(
@@ -146,7 +150,7 @@ class LoginView extends GetView<LoginController> {
                             "Silahkan daftar",
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.red,
+                              color: const Color.fromARGB(255, 136, 201, 253),
                               fontSize: 17,
                             ),
                           ),

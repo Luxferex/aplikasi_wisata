@@ -19,6 +19,7 @@ class registrasiView extends GetView<RegistrasiController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 249, 249, 249),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
@@ -50,7 +51,7 @@ class registrasiView extends GetView<RegistrasiController> {
                   child: Text(
                     "Let's Found Hidden Place!",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: const Color.fromARGB(255, 78, 172, 248),
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
@@ -102,7 +103,9 @@ class registrasiView extends GetView<RegistrasiController> {
                                     print("klik syarat");
                                   },
                                 text: "syarat",
-                                style: TextStyle(color: Colors.red),
+                                style: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 78, 172, 248)),
                               ),
                               TextSpan(
                                 text: ",",
@@ -114,7 +117,9 @@ class registrasiView extends GetView<RegistrasiController> {
                                     print("klik ketentuan");
                                   },
                                 text: " ketentuan",
-                                style: TextStyle(color: Colors.red),
+                                style: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 78, 172, 248)),
                               ),
                               TextSpan(
                                 text: ", dan",
@@ -126,7 +131,9 @@ class registrasiView extends GetView<RegistrasiController> {
                                     print("klik privasi");
                                   },
                                 text: " privasi",
-                                style: TextStyle(color: Colors.red),
+                                style: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 78, 172, 248)),
                               ),
                               TextSpan(
                                 text: " Aplikasi ini ",
@@ -191,7 +198,7 @@ class registrasiView extends GetView<RegistrasiController> {
                   text: "Masuk dengan google",
                   backgroundColor: Colors.white,
                   textColor: Colors.black54,
-                  icon: Icon(Icons.login),
+                  icon: Icon(Icons.account_circle),
                 ),
 
                 const SizedBox(
@@ -215,7 +222,7 @@ class registrasiView extends GetView<RegistrasiController> {
                             "Masuk",
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.red,
+                              color: const Color.fromARGB(255, 78, 172, 248),
                               fontSize: 17,
                             ),
                           ),
