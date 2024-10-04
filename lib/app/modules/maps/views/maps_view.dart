@@ -26,7 +26,7 @@ class _MapViewState extends State<MapView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('OpenStreetMap Example'),
+        title: Text('Detail Lokasi'),
       ),
       body: FlutterMap(
         options: MapOptions(
