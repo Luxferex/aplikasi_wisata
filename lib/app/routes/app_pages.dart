@@ -1,5 +1,5 @@
-import 'package:aplikasi_wisata/app/modules/detail/bindings/detail_bindings.dart';
-import 'package:aplikasi_wisata/app/modules/detail/views/detail_view.dart';
+import 'package:aplikasi_wisata/app/modules/maps/bindings/maps_bindings.dart';
+import 'package:aplikasi_wisata/app/modules/maps/views/maps_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
@@ -40,9 +40,9 @@ class AppPages {
       binding: RegistrasiBinding(),
     ),
     GetPage(
-      name: _Paths.DETAIL,
-      page: () => DetailView(),
-      binding: DetailBindings(),
+      name: _Paths.MAPS,
+      page: () => MapsView(),
+      binding: MapsBindings(),
     ),
   ];
 }
