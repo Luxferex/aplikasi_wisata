@@ -154,10 +154,13 @@ class HomeView extends GetView<HomeController> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      DestinationCard(
-                        imageAsset: "assets/images/pantai.jpeg",
-                        placeName: 'Beautiful Beach',
-                        location: 'Location A',
+                      GestureDetector(
+                        onTap: () => Get.toNamed('/maps'),
+                        child: DestinationCard(
+                          imageAsset: "assets/images/pantai.jpeg",
+                          placeName: 'Beautiful Beach',
+                          location: 'Location A',
+                        ),
                       ),
                       SizedBox(
                         width: 20,
