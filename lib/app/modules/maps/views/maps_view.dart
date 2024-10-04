@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart'; // Pastikan menggunakan latlong2
+import 'package:latlong2/latlong.dart';
 
-import '../controllers/maps_controllers.dart'; // Sesuaikan dengan controller-mu
+import '../controllers/maps_controllers.dart';
 
 class MapsView extends GetView<MapsControllers> {
   @override
@@ -20,7 +20,6 @@ class MapView extends StatefulWidget {
 }
 
 class _MapViewState extends State<MapView> {
-  // Menggunakan LatLng dari latlong2 package
   static final LatLng _pGooglePlex = LatLng(37.4223, -122.0848);
 
   @override
